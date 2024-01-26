@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ebf2fa;
+
+}
+
+.toolbar {
+  height: 4rem;
+  display: flex;
+  justify-content: space-center;
+  align-items: center;
+
+}
+
+
+
+
+
+.btn-color {
+  background-color: #0e1c36;
+  color: #fff;
+
+}
+
+.profile-image-pic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+
+.cardbody-color {
+  background-color: #ebf2fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.navlist {
+
+  background-color: #000036;
+
+}

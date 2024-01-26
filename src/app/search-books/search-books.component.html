@@ -1,0 +1,22 @@
+<div class="toolbar">
+  <div class="search-books">
+    <input type="search" class="form-control" placeholder="Search Author" (input)="searchBooks($event)">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-xl-4" *ngFor="let row of bookData">
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src={{row.imgSrc}} width="50" height="300">
+        <div class="card-body">
+          <h5 class="card-title">{{row.bookname}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <h6 class="card-title">by {{row.author}}</h6>
+          <a href="#" class="btn btn-primary">Borrow</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

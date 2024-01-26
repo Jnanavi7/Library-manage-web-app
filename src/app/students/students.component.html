@@ -1,0 +1,98 @@
+<main>
+    <div class="toolbar">
+        <div class="add-students">
+            <button (click)="clickaddstudents()" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">ADD STUDENTS</button>
+        </div>
+
+        <div class="search-students">
+            <input type="search" class="form-control" name="searchbooks" placeholder="Search Student Name"
+                (input)="searchStudents($event)">
+        </div>
+
+    </div>
+</main>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h5 style="color:white" class="modal-title" id="exampleModalLabel">ADD STUDENT</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="studentform">
+                    <div class="form-group mb-2">
+                        <label for="name">Enter Name</label>
+                        <input  [class.is-invalid]="studentform.get('name')?.invalid && studentform.get('name')?.touched" type="text" class="form-control" formControlName="name" placeholder="Enter name">
+                        <small [class.d-none]="studentform.get('name')?.valid ||
+                            studentform.get('name')?.untouched" class=" text-danger">name is required</small>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="branch">Enter Branch</label>
+                        <input  [class.is-invalid]="studentform.get('branch')?.invalid && studentform.get('branch')?.touched" type="text" class="form-control" formControlName="branch" placeholder="Enter branch">
+                        <small [class.d-none]="studentform.get('branch')?.valid ||
+                            studentform.get('branch')?.untouched" class=" text-danger">branch is required</small>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="semester">Enter Semester</label>
+                        <input  [class.is-invalid]="studentform.get('semester')?.invalid && studentform.get('semester')?.touched" type="text" class="form-control" formControlName="semester" placeholder="Enter semester">
+                        <small [class.d-none]="studentform.get('semester')?.valid ||
+                            studentform.get('semester')?.untouched" class=" text-danger">semester is required</small>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="email">Enter Email</label>
+                        <input  [class.is-invalid]="studentform.get('email')?.invalid && studentform.get('email')?.touched" type="email" class="form-control" formControlName="email" placeholder="Enter email">
+                        <small [class.d-none]="studentform.get('email')?.valid ||
+                            studentform.get('email')?.untouched" class=" text-danger">email is required</small>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer bg-info">
+                <button type="button" id="cancel" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button (click)="addstudents()" [disabled]="studentform.invalid" type="button" class="btn btn-primary" *ngIf="showAdd">Add</button>
+                <button (click)="updatestudents()" [disabled]="studentform.invalid" type="button" class="btn btn-primary"
+                    *ngIf="showUpdate">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid mt-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of studentData">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.branch}}</td>
+                <td>{{row.semester}}</td>
+                <td>{{row.email}}</td>
+                <td><button (click)="onEdit(row)" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>
+                    <button (click)="deletestudents(row)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

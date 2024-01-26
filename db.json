@@ -1,0 +1,87 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "bookname": "Digital Signal Processing",
+      "imgSrc": "../../assets/DSP.jpeg",
+      "author": "Narayan",
+      "edition": "fourth",
+      "branch": "CS"
+    },
+    {
+      "id": 2,
+      "bookname": "Power System Planning",
+      "imgSrc": "../../assets/PSP.jpeg",
+      "author": "A S Pabla",
+      "edition": "second",
+      "branch": "EEE"
+    },
+    {
+      "id": 3,
+      "bookname": "Data Structures and Aglorithms",
+      "author": "Narashimha K",
+      "edition": "fourth",
+      "branch": "CS",
+      "imgSrc": "../../assets/DSA.jpeg"
+    },
+    {
+      "id": 4,
+      "bookname": "Power system operation and control",
+      "author": "N V Ramana",
+      "edition": "fifth",
+      "branch": "EEE",
+      "imgSrc": "../../assets/PSOC.jpeg"
+    },
+    {
+      "id": 5,
+      "bookname": "Electric vehicles",
+      "author": "Demo",
+      "edition": "first",
+      "branch": "EEE",
+      "imgSrc": ""
+    }
+  ],
+  "studentsinfo": [
+    {
+      "id": 1,
+      "name": "Jnanavi",
+      "branch": "EEE",
+      "semester": "eight",
+      "email": "demo45123@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Jnanika",
+      "branch": "EEE",
+      "semester": "Third",
+      "email": "jnanika@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Viditha",
+      "branch": "Mech",
+      "semester": "seventh",
+      "email": "viditha@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "vidisha",
+      "branch": "eee",
+      "semester": "eigth",
+      "email": "demo@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Test",
+      "branch": "CS",
+      "semester": "third",
+      "email": "test@gmail.com"
+    }
+  ],
+  "logininfo": [
+    {
+      "email": "demo123@gmail.com",
+      "password": "adminlogin123"
+    }
+  ]
+}

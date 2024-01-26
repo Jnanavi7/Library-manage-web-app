@@ -1,0 +1,95 @@
+<main>
+    <div class="toolbar">
+        <div class="add-books">
+            <button (click)="  clickaddbooks()" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">ADD BOOKS</button>
+        </div>
+        <div class="search-books">
+            <input type="search" class="form-control" placeholder="Search Author" (input)="searchBooks($event)">
+        </div>
+    </div>
+</main>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h5 style="color:white" class="modal-title" id="exampleModalLabel">ADD BOOK DATA</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="bookform">
+                    <div class="form-group mb-2">
+                        <label for="bookname">Enter Book name</label>
+                        <input  [class.is-invalid]="bookform.get('bookname')?.invalid && bookform.get('bookname')?.touched" type="text" class="form-control" formControlName="bookname"placeholder="Enter Book name">
+                        <small [class.d-none]="bookform.get('bookname')?.valid ||
+                            bookform.get('bookname')?.untouched" class=" text-danger">bookname is required</small>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="author">Enter Author</label>
+                        <input  [class.is-invalid]="bookform.get('author')?.invalid && bookform.get('author')?.touched" type="text" class="form-control" formControlName="author" placeholder="Enter author">
+                        <small [class.d-none]="bookform.get('author')?.valid ||
+                            bookform.get('author')?.untouched" class=" text-danger">author is required</small>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="edition">Enter Book Editon</label>
+                        <input  [class.is-invalid]="bookform.get('edition')?.invalid && bookform.get('edition')?.touched" type="text" class="form-control" formControlName="edition"placeholder="Enter book edition">
+                        <small [class.d-none]="bookform.get('edition')?.valid ||
+                            bookform.get('edition')?.untouched" class=" text-danger">edition is required</small>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="branch">Enter Branch</label>
+                        <input  [class.is-invalid]="bookform.get('branch')?.invalid && bookform.get('branch')?.touched" type="text" class="form-control" formControlName="branch" placeholder="Enter branch">
+                        <small [class.d-none]="bookform.get('branch')?.valid ||
+                            bookform.get('branch')?.untouched" class=" text-danger">branch is required</small>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer bg-info">
+                <button type="button" id="cancel" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button (click)="addbooks()"  [disabled]="bookform.invalid"   type="button" class="btn btn-primary" *ngIf="showAdd">Add</button>
+                <button (click)="updatebooks()" [disabled]="bookform.invalid" type="button" class="btn btn-primary" *ngIf="showUpdate">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid mt-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Bookname</th>
+                <th scope="col">Author</th>
+                <th scope="col">Edition</th>
+                <th scope="col">Branch</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of bookData">
+                <td>{{row.id}}</td>
+                <td>{{row.bookname}}</td>
+                <td>{{row.author}}</td>
+                <td>{{row.edition}}</td>
+                <td>{{row.branch}}</td>
+                <td><button (click)="onEdit(row)" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>
+                    <button (click)="deletebooks(row)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
