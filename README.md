@@ -1,27 +1,44 @@
-# LibraryMgmt
+# Library-manage-web-app
+This web app provides essential functionalities for efficiently managing a library's book collection. Administrators can add, update, and delete books info while Users benefit from straightforward book search functionality, allowing them to find books based on title, author, or genre.The interface is designed to be user-friendly, and the application supports role-based access control to distinguish between administrators and regular users.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## Key Features
 
-## Development server
+### Admin Book Management:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Add Books:** Administrators can easily add new books to the library database, providing comprehensive details such as title, author, genre, and more.
+- **Update Information:** Administrators can edit book details as needed.
+- **Delete Books:**  administrators with the ability to remove books that are no longer part of the collection.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Search Functionality:
 
-## Build
+- **User Book Search:** Users can easily search for books using the search functionality, making it convenient to find specific titles, authors, or genres within the library's collection.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Book Details View:
 
-## Running unit tests
+- Users can view detailed information about each book, including the book cover, author, genre, and any additional information available in the database.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Role-Based Access Control:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Implement role-based access control to differentiate between administrators and regular users, ensuring that only authorized personnel can perform administrative tasks.
 
-## Further help
+## How to Use
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Installation:
+
+1. Clone the repository to your local machine.
+2. Run `npm install` to install the necessary dependencies.
+3. Execute `ng serve` to start the development server.
+
+### Administrator Tasks:
+
+- Log in with administrator credentials to access book management functionalities.
+- Add, update, or delete books as needed.
+
+### User Book Discovery:
+
+- Log in as a regular user to explore the library's book collection.
+- Utilize the search functionality to find books based on title, author, or genre.
+- View detailed information about each book in the library.
+
